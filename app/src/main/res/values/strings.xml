@@ -2,4 +2,7 @@
     <string name="app_name">learn-activity</string>
     <string name="move_activity">Move Activity</string>
     <string name="this_is_explicit_intent_without_data">This is Explicit Intent without data</string>
+    <string name="move_with_data">Move with Data</string>
+    <string name="this_is_explicit_intent_with_data">this is explicit intent with data</string>
+    <string name="move_to_facebook">move to facebook</string>
 </resources>

@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_move.xml" value="0.25833333333333336" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_move_data.xml" value="0.1328125" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_move_implicit.xml" value="0.1328125" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_move_with_data1.xml" value="0.1328125" />
       </map>
     </option>
   </component>
