@@ -8,58 +8,27 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_explicit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/panjang"
-        android:textStyle="italic"/>
-
-    <EditText
-        android:id="@+id/edit_length"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lebar"
-        android:textStyle="italic"/>
-
-    <EditText
-        android:id="@+id/edit_width"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tinggi"
-        android:textStyle="italic"/>
-
-    <EditText
-        android:id="@+id/edit_height"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1"/>
+        android:layout_marginBottom="16dp"
+        android:text="@string/move_activity"/>
 
     <Button
-        android:id="@+id/btn_main"
+        android:id="@+id/btn_explicit_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tap_here"/>
+        android:layout_marginBottom="16dp"
+        android:text="@string/move_with_data"/>
 
-    <TextView
-        android:id="@+id/result"
+    <Button
+        android:id="@+id/btn_implicit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hasil"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="24sp"/>
+        android:text="@string/move_to_facebook"/>
+
+
+
 
 </LinearLayout>
