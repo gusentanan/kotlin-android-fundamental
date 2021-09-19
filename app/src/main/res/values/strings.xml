@@ -2,4 +2,8 @@
     <string name="app_name">learn-activity</string>
     <string name="item_title">item_title</string>
     <string name="item_desc">item_desc</string>
+    <string name="idol_card_name">idol_card_name</string>
+    <string name="idol_card_detail">idol_card_detail</string>
+    <string name="favorite">favorite</string>
+    <string name="share">share</string>
 </resources>

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.learn_activity.adapter.IdolAdapter
+import com.example.learn_activity.adapter.IdolCardAdapter
 import com.example.learn_activity.adapter.IdolGridAdapter
 import com.example.learn_activity.data.IdolData
 import com.example.learn_activity.model.Idol
@@ -23,6 +24,7 @@ import com.example.learn_activity.model.Idol
 class MainActivity : AppCompatActivity(){
     private lateinit var rvIdol: RecyclerView
     private var list: ArrayList<Idol> = arrayListOf()
+    private var title: String = "List View Mode"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,16 @@ class MainActivity : AppCompatActivity(){
         rvIdol.adapter = gridIdolAdapter
     }
 
+    private fun showRecyclerCard(){
+        rvIdol.layoutManager = LinearLayoutManager(this)
+        val cardIdolAdapter = IdolCardAdapter(list)
+        rvIdol.adapter = cardIdolAdapter
+    }
+
+    private fun setActionBarTitle(title: String){
+        supportActionBar?.title = title
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -61,15 +73,19 @@ class MainActivity : AppCompatActivity(){
     private fun setMenu(selectedMenu: Int){
         when(selectedMenu){
             R.id.list_view -> {
+                title = "List View Mode"
                 showRecyclerList()
             }
             R.id.grid_view -> {
+                title = "Grid View Mode"
                 showRecyclerGrid()
             }
             R.id.card_view -> {
-
+                title = "Card View Mode"
+                showRecyclerCard()
             }
         }
+        setActionBarTitle(title)
     }
 
 
