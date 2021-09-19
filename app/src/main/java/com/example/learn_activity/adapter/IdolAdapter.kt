@@ -11,7 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.learn_activity.R
 import com.example.learn_activity.model.Idol
 
-class IdolAdapter(val listOfIdol: ArrayList<Idol>): RecyclerView.Adapter<IdolAdapter.ListViewHolder>() {
+class IdolAdapter(private val listOfIdol: ArrayList<Idol>): RecyclerView.Adapter<IdolAdapter.ListViewHolder>() {
 
     inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_title)

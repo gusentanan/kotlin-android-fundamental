@@ -10,9 +10,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.learn_activity.adapter.IdolAdapter
+import com.example.learn_activity.adapter.IdolGridAdapter
 import com.example.learn_activity.data.IdolData
 import com.example.learn_activity.model.Idol
 
@@ -40,6 +42,12 @@ class MainActivity : AppCompatActivity(){
         rvIdol.adapter = listIdolAdapter
     }
 
+    private fun showRecyclerGrid(){
+        rvIdol.layoutManager = GridLayoutManager(this, 2)
+        val gridIdolAdapter = IdolGridAdapter(list)
+        rvIdol.adapter = gridIdolAdapter
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -53,10 +61,10 @@ class MainActivity : AppCompatActivity(){
     private fun setMenu(selectedMenu: Int){
         when(selectedMenu){
             R.id.list_view -> {
-
+                showRecyclerList()
             }
             R.id.grid_view -> {
-
+                showRecyclerGrid()
             }
             R.id.card_view -> {
 
