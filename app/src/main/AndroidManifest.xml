@@ -10,18 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learnactivity">
         <activity
-            android:name=".MoveActivityImplicit"
-            android:exported="true" />
-        <activity
-            android:name=".MoveActivityData"
-            android:exported="true" />
-        <activity
-            android:name=".move_with_data1"
-            android:exported="true" />
-        <activity
-            android:name=".MoveActivity"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
