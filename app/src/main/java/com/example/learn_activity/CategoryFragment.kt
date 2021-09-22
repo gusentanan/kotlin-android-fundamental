@@ -29,6 +29,21 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         if(v?.id == R.id.btn_detail_category){
+            val myDetailCategoryFragment = DetailCategoryFragment()
+
+            val myBundle = Bundle()
+            myBundle.putString(DetailCategoryFragment.EXTRA_NAME, "lifestyle")
+            val desc = "Kategori ini berisi banyak sekali lifestyle lah"
+
+            myDetailCategoryFragment.arguments = myBundle
+            myDetailCategoryFragment.desc = desc
+
+            val myFragmentManager = parentFragmentManager
+            myFragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, myDetailCategoryFragment, DetailCategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
 
         }
     }
