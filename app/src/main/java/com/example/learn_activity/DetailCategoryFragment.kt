@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import org.w3c.dom.Text
 
 
@@ -35,6 +36,12 @@ class DetailCategoryFragment : Fragment() {
         val btnToProfile:Button = view.findViewById(R.id.btn_profile)
         val btnShowDialog: Button = view.findViewById(R.id.btn_show_dialog)
 
+        btnShowDialog.setOnClickListener{
+            val mOptionDialogFragment = OptionDialogFragment()
+            val mFragmentManager = parentFragmentManager
+            mOptionDialogFragment.show(mFragmentManager, OptionDialogFragment::class.java.simpleName)
+        }
+
         if(savedInstanceState != null){
             val descFromBundle = savedInstanceState.getString(EXTRA_DESC)
             desc = descFromBundle
@@ -48,8 +55,10 @@ class DetailCategoryFragment : Fragment() {
 
     }
 
-
-
-
+    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener = object : OptionDialogFragment.OnOptionDialogListener {
+        override fun onOptionChosen(text: String?) {
+            Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
+        }
+    }
 
 }
