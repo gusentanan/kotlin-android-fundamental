@@ -1,5 +1,6 @@
 package com.example.learn_activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,6 +41,11 @@ class DetailCategoryFragment : Fragment() {
             val mOptionDialogFragment = OptionDialogFragment()
             val mFragmentManager = parentFragmentManager
             mOptionDialogFragment.show(mFragmentManager, OptionDialogFragment::class.java.simpleName)
+        }
+
+        btnToProfile.setOnClickListener{
+            val myIntent = Intent(activity, ProfileActivity::class.java)
+            startActivity(myIntent)
         }
 
         if(savedInstanceState != null){
