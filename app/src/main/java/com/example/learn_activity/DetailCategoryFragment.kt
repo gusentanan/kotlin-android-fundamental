@@ -39,7 +39,7 @@ class DetailCategoryFragment : Fragment() {
 
         btnShowDialog.setOnClickListener{
             val mOptionDialogFragment = OptionDialogFragment()
-            val mFragmentManager = parentFragmentManager
+            val mFragmentManager = childFragmentManager
             mOptionDialogFragment.show(mFragmentManager, OptionDialogFragment::class.java.simpleName)
         }
 
@@ -61,7 +61,13 @@ class DetailCategoryFragment : Fragment() {
 
     }
 
-    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener = object : OptionDialogFragment.OnOptionDialogListener {
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(EXTRA_DESC, desc)
+    }
+
+    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener =
+        object : OptionDialogFragment.OnOptionDialogListener {
         override fun onOptionChosen(text: String?) {
             Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
         }
