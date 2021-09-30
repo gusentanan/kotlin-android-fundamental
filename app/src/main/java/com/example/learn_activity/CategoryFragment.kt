@@ -5,51 +5,49 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.navigation.findNavController
+import com.example.learn_activity.databinding.FragmentCategoryBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CategoryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class CategoryFragment : Fragment(), View.OnClickListener {
+
+class CategoryFragment : Fragment() {
+    private var _binding : FragmentCategoryBinding ?  = null
+    private val binding get() = _binding!!
+
+    companion object {
+        const val EXTRA_NAME = "extra_name"
+        const val EXTRA_STOCK = "extra_stock"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false)
+    ): View {
+
+        _binding = FragmentCategoryBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnDetail: Button = view.findViewById(R.id.btn_detail_category)
-        btnDetail.setOnClickListener(this)
-    }
 
-    override fun onClick(v: View?) {
-        if(v?.id == R.id.btn_detail_category){
-            val myDetailCategoryFragment = DetailCategoryFragment()
+        binding.btnCategoryLifestyle.setOnClickListener(){
+            // using bundle
+//            val mBundle = Bundle()
+//            mBundle.putString(EXTRA_NAME, "Hello sir!")
+//            mBundle.putInt(EXTRA_STOCK, 8)
+//            view.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)
 
-            val myBundle = Bundle()
-            myBundle.putString(DetailCategoryFragment.EXTRA_NAME, "lifestyle")
-            val desc = "Kategori ini berisi banyak sekali lifestyle lah"
-
-            myDetailCategoryFragment.arguments = myBundle
-            myDetailCategoryFragment.desc = desc
-
-            val myFragmentManager = parentFragmentManager
-            myFragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, myDetailCategoryFragment, DetailCategoryFragment::class.java.simpleName)
-                addToBackStack(null)
-                commit()
-            }
-
+            // using safeArgs
+            val toDetailCategoryFragment = CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
+            toDetailCategoryFragment.name = "Hello Mam!"
+            toDetailCategoryFragment.stock = 10
+            view.findNavController().navigate(toDetailCategoryFragment)
         }
     }
 
-
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 
 }
