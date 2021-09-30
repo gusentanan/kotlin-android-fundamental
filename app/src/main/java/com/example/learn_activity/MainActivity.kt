@@ -21,18 +21,6 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) // to view layout from activity_main.xml
 
-        val myFragmentManager = supportFragmentManager
-        val myHomefragment = HomeFragment()
-        val fragment = myFragmentManager.findFragmentByTag(HomeFragment::class.java.simpleName)
-
-        if(fragment !is HomeFragment){
-            Log.d("learn-activity", "fragment-name: " + HomeFragment::class.java.simpleName)
-            myFragmentManager
-                .beginTransaction()
-                .add(R.id.frame_container, myHomefragment, HomeFragment::class.java.simpleName)
-                .commit()
-        }
-
     }
 
 }
