@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable-v21/ic_search_white_24px.xml" value="0.2604166666666667" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27447916666666666" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27447916666666666" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/item_row_idol.xml" value="0.24427083333333333" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/option_fragment_dialog.xml" value="0.2786458333333333" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/menu.xml" value="0.25833333333333336" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/option_menu.xml" value="0.2546875" />
       </map>
     </option>
   </component>
