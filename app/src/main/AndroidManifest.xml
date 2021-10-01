@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learnactivity">
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,8 +17,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <nav-graph android:value="@navigation/main_navigation" />
         </activity>
+        <activity android:name=".MenuActivity"/>
     </application>
 
 </manifest>
