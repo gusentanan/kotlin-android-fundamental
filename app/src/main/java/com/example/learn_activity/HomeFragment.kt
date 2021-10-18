@@ -28,8 +28,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val tvLabel: TextView = view.findViewById(R.id.section_label)
+        val tvLabels: TextView = view.findViewById(R.id.section_label)
         val index = arguments?.getInt(ARG_SECTION_NUMBER, 0)
-        tvLabel.text = getString(R.string.content_tab_text, index)
+        tvLabels.text = getString(R.string.content_tab_text, index)
     }
 }
