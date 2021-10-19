@@ -5,10 +5,14 @@
       <map>
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable-v21/ic_search_white_24px.xml" value="0.2604166666666667" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27447916666666666" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.146875" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.146875" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.146875" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27447916666666666" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2708333333333333" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2708333333333333" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2708333333333333" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.146875" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/drawable/side_nav_bar.xml" value="0.27447916666666666" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/activity_main2.xml" value="0.2115036231884058" />
@@ -22,10 +26,12 @@
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/content_main.xml" value="0.20923913043478262" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_cart.xml" value="0.20923913043478262" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_category.xml" value="0.25833333333333336" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_dashboard.xml" value="0.20606884057971014" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_detail_category.xml" value="0.25833333333333336" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_dialog.xml" value="0.25833333333333336" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_gallery.xml" value="0.20923913043478262" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_home.xml" value="0.25833333333333336" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_notifications.xml" value="0.20606884057971014" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_profile.xml" value="0.2115036231884058" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/fragment_slideshow.xml" value="0.20923913043478262" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/item_card_idol.xml" value="0.25833333333333336" />
@@ -34,6 +40,7 @@
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/nav_header_main.xml" value="0.20923913043478262" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/layout/option_fragment_dialog.xml" value="0.2786458333333333" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/activity_main_drawer.xml" value="0.25833333333333336" />
+        <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2546875" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/main.xml" value="0.25833333333333336" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/menu.xml" value="0.25833333333333336" />
         <entry key="..\:/Dicoding/android/kotlin/learn-kotlin/app/src/main/res/menu/option_menu.xml" value="0.2546875" />
