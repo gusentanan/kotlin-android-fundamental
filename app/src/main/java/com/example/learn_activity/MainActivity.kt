@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
     private fun visible() {
         activityMainBinding.btnCalculateVolume.visibility = View.VISIBLE
         activityMainBinding.btnCalculateCircumference.visibility = View.VISIBLE
