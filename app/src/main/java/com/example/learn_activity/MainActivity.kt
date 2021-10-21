@@ -1,74 +1,99 @@
 package com.example.learn_activity
 
+import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.learn_activity.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
+    private lateinit var mUserPreference: UserPreference
     private lateinit var binding: ActivityMainBinding
+
+    private var isPreferenceEmpty = false
+    private lateinit var userModel: UserModel
+
+    private val resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result: ActivityResult ->
+        if (result.data != null && result.resultCode == FormUserPreferenceActivity.RESULT_CODE) {
+            userModel = result.data?.getParcelableExtra<UserModel>(FormUserPreferenceActivity.EXTRA_RESULT) as UserModel
+            populateView(userModel)
+            checkForm(userModel)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonNew.setOnClickListener(this)
-        binding.buttonOpen.setOnClickListener(this)
-        binding.buttonSave.setOnClickListener(this)
+        supportActionBar?.title = "My User Preference"
+
+        mUserPreference = UserPreference(this)
+
+        showExistingPreference()
+
+        binding.btnSave.setOnClickListener(this)
+
     }
 
-    override fun onClick(view: View) {
-        when (view.id) {
-            R.id.button_new -> newFile()
-                R.id.button_open -> showList()
-            R.id.button_save -> saveFile()
-        }
+    private fun showExistingPreference() {
+        userModel = mUserPreference.getUser()
+        populateView(userModel)
+        checkForm(userModel)
     }
 
-    private fun newFile() {
-        binding.editTitle.setText("")
-        binding.editFile.setText("")
-        Toast.makeText(this, "Clearing file", Toast.LENGTH_SHORT).show()
-    }
-    private fun showList() {
-        val items = fileList()
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Pilih file yang diinginkan")
-        builder.setItems(items) { dialog, item -> loadData(items[item].toString()) }
-        val alert = builder.create()
-        alert.show()
-    }
-    private fun loadData(title: String) {
-        val fileModel = FileHelper.readFromFile(this, title)
-        binding.editTitle.setText(fileModel.filename)
-        binding.editFile.setText(fileModel.data)
-        Toast.makeText(this, "Loading " + fileModel.filename + " data", Toast.LENGTH_SHORT).show()
+    private fun populateView(userModel: UserModel) {
+        binding.tvName.text =
+            if (userModel.name.toString().isEmpty()) "Tidak Ada" else userModel.name
+        binding.tvAge.text =
+            if (userModel.age.toString().isEmpty()) "Tidak Ada" else userModel.age.toString()
+        binding.tvIsLoveMu.text = if (userModel.isLove) "Ya" else "Tidak"
+        binding.tvEmail.text =
+            if (userModel.email.toString().isEmpty()) "Tidak Ada" else userModel.email
+        binding.tvPhone.text =
+            if (userModel.phoneNumber.toString().isEmpty()) "Tidak Ada" else userModel.phoneNumber
     }
 
-    private fun saveFile() {
+    private fun checkForm(userModel: UserModel) {
         when {
-            binding.editTitle.text.toString().isEmpty() -> Toast.makeText(this, "Title harus diisi terlebih dahulu", Toast.LENGTH_SHORT).show()
-            binding.editFile.text.toString().isEmpty() -> Toast.makeText(this, "Kontent harus diisi terlebih dahulu", Toast.LENGTH_SHORT).show()
+            userModel.name.toString().isNotEmpty() -> {
+                binding.btnSave.text = getString(R.string.change)
+                isPreferenceEmpty = false
+            }
             else -> {
-                val title = binding.editTitle.text.toString()
-                val text = binding.editFile.text.toString()
-                val fileModel = FileModel()
-                fileModel.filename = title
-                fileModel.data = text
-                FileHelper.writeToFile(fileModel, this)
-                Toast.makeText(this, "Saving " + fileModel.filename + " file", Toast.LENGTH_SHORT).show()
+                binding.btnSave.text = getString(R.string.save)
+                isPreferenceEmpty = true
             }
         }
     }
 
+    override fun onClick(view: View) {
+        if (view.id == R.id.btn_save) {
+            val intent = Intent(this@MainActivity, FormUserPreferenceActivity::class.java)
+            when {
+                isPreferenceEmpty -> {
+                    intent.putExtra(
+                        FormUserPreferenceActivity.EXTRA_TYPE_FORM,
+                        FormUserPreferenceActivity.TYPE_ADD
+                    )
+                    intent.putExtra("USER", userModel)
+                }
+                else -> {
+                    intent.putExtra(
+                        FormUserPreferenceActivity.EXTRA_TYPE_FORM,
+                        FormUserPreferenceActivity.TYPE_EDIT
+                    )
+                    intent.putExtra("USER", userModel)
+                }
+            }
+            resultLauncher.launch(intent)
+        }
+    }
 }
