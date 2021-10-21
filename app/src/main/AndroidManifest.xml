@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learnactivity">
         <activity
+            android:name=".NoteAddUpdateActivity"
+            android:exported="true" />
+        <activity
             android:name=".FormUserPreferenceActivity"
             android:exported="true" />
         <activity

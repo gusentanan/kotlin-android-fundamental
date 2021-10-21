@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">learn-activity</string>
-    <string name="dark_mode">Dark Mode</string>
-
+    <string name="title">Judul</string>
+    <string name="description">Deskripsi</string>
+    <string name="submit">Submit</string>
+    <string name="delete">Hapus</string>
+    <string name="date">Date</string>
 </resources>
 
